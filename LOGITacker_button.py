@@ -14,6 +14,7 @@ scriptname = os.path.basename(sys.argv[0])
 
 print ('LOGITacker injection at the push of two buttons')
 print ('This script executes until Ctrl-C is pressed.')
+print ('Press and hold Ctrl-C in order to stop this program.')
 
 def main():
     # infinite loop for as many executions as needed
@@ -99,19 +100,19 @@ def main():
             button_counter=0
             if channel1.get_isPressed() == YAnButton.ISPRESSED_TRUE:
                 button_counter +=1
-                print (button_counter)
+                #print (button_counter)
             if channel2.get_isPressed() == YAnButton.ISPRESSED_TRUE:
                 button_counter +=1
-                print (button_counter)
+                #print (button_counter)
             if channel3.get_isPressed() == YAnButton.ISPRESSED_TRUE:
                 button_counter +=1
-                print (button_counter)
+                #print (button_counter)
             if channel4.get_isPressed() == YAnButton.ISPRESSED_TRUE:
                 button_counter +=1
-                print (button_counter)
+                #print (button_counter)
             if channel5.get_isPressed() == YAnButton.ISPRESSED_TRUE:
                 button_counter +=1
-                print (button_counter)
+                #print (button_counter)
 
             #print('(press any two buttons simultaneously to execute)')
             # this is done for safety reasons; might prevent premature execution
@@ -131,14 +132,16 @@ def main():
         #subprocess.check_call(pass_arg)
         #argv2 = str(argv2)
         #subprocess.check_call([str(script_to_execute), argv2])
+        subprocess.check_call([script_to_execute, argv2])
         #subprocess.Popen(['./logi_target_inject.ksh %s' % argv2])
         #subprocess.call(shlex.split('./logi_target_inject.ksh' + argv2))
         #payload = (str(script_to_execute) + ' ' + str(argv2))
         #subprocess.call(shlex.split(payload))
+        #subprocess.Popen(['logi_target_inject.ksh %s' %(argv2)], shell=True)
         #subprocess.Popen(['logi_target_inject.ksh %s' %(argv2)])
         #subprocess.Popen(['%s %s' %(script_to_execute,argv2)])
-        result = subprocess.Popen([str(script_to_execute), str(argv2)], stdout=subprocess.PIPE,stderr=subprocess.STDOUT)
-        result.communicate()
+        #result = subprocess.Popen([str(script_to_execute), str(argv2)], stdout=subprocess.PIPE,stderr=subprocess.STDOUT)
+        #result.communicate()
         time.sleep(2)
 
 if __name__ == '__main__':
