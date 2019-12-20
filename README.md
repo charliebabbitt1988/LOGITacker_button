@@ -19,12 +19,12 @@ After script is running, approach the target and push two buttons simultaneously
 
 Usually in close to 5 or 6 seconds, the payload will be sent to the target.  If the payload is larger than one command, then it will take a little longer.
 
-Known issues: 
+- Known issues: 
     - the Yoctopuce libraries for the Yocto Knob are not always 100% reliable so the python script will sometimes fail and not initialize the Yocto Knob; for now the workaround is to execute it in an infinite loop until it executes successfully.  It seems stable after the python script launches.
     - this script uses "pkill screen" in order to bring down the connected screen session to /dev/ttyACM0 which will kill all running screen sessions on the system.  If you need your screen sessions, then don't run this script.
     - the Ctrl-C exit isn't the most graceful, but it works if you hold down the keys.
 
-TODO: 
+- TODO: 
     - attempt to stabilize the Python script; it doesn't always launch reliably; delays during initializing the Yocto Knob could solve this.
     - optimize the delays between the connections to the screen session so as to make execution faster; total execution time could be as much as 0.25 seconds faster, but not above 0.35 seconds faster; this is working well, however, and probably won't be changed.
     - add support for other platforms like Mac OS X
