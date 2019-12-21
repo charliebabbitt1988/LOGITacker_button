@@ -17,7 +17,7 @@ If desired, adjust your payload in the logi_target_inject.ksh script near line 3
 
 After script is running, approach the target and push two buttons simultaneously on the Yocto Knob.
 
-Usually in close to 5 or 6 seconds, the payload will be sent to the target.  If the payload is larger than one command, then it will take a little longer.
+Usually in close to 4 to 6 seconds, the payload will be sent to the target.  If the payload is larger than one command, then it will take a little longer.
 
 - Known issues: 
     - the Yoctopuce libraries for the Yocto Knob are not always 100% reliable so the python script will sometimes fail and not initialize the Yocto Knob; for now the workaround is to execute it in an infinite loop until it executes successfully.  It seems stable after the python script launches.
@@ -25,6 +25,6 @@ Usually in close to 5 or 6 seconds, the payload will be sent to the target.  If 
     - the Ctrl-C exit isn't the most graceful, but it works if you hold down the keys.
 
 - TODO: 
-    - attempt to stabilize the Python script; it doesn't always launch reliably; delays during initializing the Yocto Knob could solve this.
+    - attempt to stabilize the Python script; it doesn't always launch reliably; delays during initializing or validating the init steps for the Yocto Knob could solve this.
     - optimize the delays between the connections to the screen session so as to make execution faster; total execution time could be as much as 0.25 seconds faster, but not above 0.35 seconds faster; this is working well, however, and probably won't be changed.
     - add support for other platforms like Mac OS X
