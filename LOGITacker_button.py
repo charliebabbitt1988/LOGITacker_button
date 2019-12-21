@@ -1,15 +1,23 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
-import os, sys
+
+try:
+    import os, sys
+    from yoctopuce.yocto_api import *
+    from yoctopuce.yocto_anbutton import *
+    import subprocess
+    import shlex
+    import time
+except KeyboardInterrupt:
+    print('Interrupted')
+    try:
+        sys.exit(1)
+    except SystemExit:
+        os._exit(1)
+            
 # add ../../Sources to the PYTHONPATH
 sys.path.append(os.path.join("..", "..", "Sources"))
 
-from yoctopuce.yocto_api import *
-from yoctopuce.yocto_anbutton import *
-import subprocess
-import shlex
-import time
-            
 scriptname = os.path.basename(sys.argv[0])
 
 print ('LOGITacker injection at the push of two buttons')
@@ -127,13 +135,7 @@ def main():
 
         YAPI.FreeAPI()
         print('Executing payload...')
-        #pass_arg=[]
-        #pass_arg[0]=str(script_to_execute)
-        #pass_arg[0]="/home/test.sh"
-        #pass_arg[1]="arg1"
-        #pass_arg[1]=str(argv2)
         #subprocess.check_call(pass_arg)
-        #argv2 = str(argv2)
         #subprocess.check_call([str(script_to_execute), argv2])
         subprocess.check_call([script_to_execute, argv2])
         #subprocess.Popen(['./logi_target_inject.ksh %s' % argv2])
@@ -143,8 +145,6 @@ def main():
         #subprocess.Popen(['logi_target_inject.ksh %s' %(argv2)], shell=True)
         #subprocess.Popen(['logi_target_inject.ksh %s' %(argv2)])
         #subprocess.Popen(['%s %s' %(script_to_execute,argv2)])
-        #result = subprocess.Popen([str(script_to_execute), str(argv2)], stdout=subprocess.PIPE,stderr=subprocess.STDOUT)
-        #result.communicate()
         time.sleep(2)
 
 if __name__ == '__main__':
@@ -156,4 +156,6 @@ if __name__ == '__main__':
             sys.exit(1)
         except SystemExit:
             os._exit(1)
+        finally:
+            sys.exit(1)
 
