@@ -11,7 +11,7 @@ Only Linux is supported.
 With an adapter for Micro USB, plug in the Yocto Knob to your Linux computer.  A battery powered Raspberry Pi or Odroid works well.  Also, flash your dongle with the instructions at: https://github.com/mame82/LOGITacker
 Plug in your dongle of choice.  The April Brother nRF52840 Dongle is recommended.
 
-If desired, adjust your payload in the logi_target_inject.ksh script near line 25 (default is calc.exe)
+If desired, adjust your payload in the logi_target_inject.ksh script near line 32 (default is calc.exe)
 
 ## Usage: ./runme.ksh AA:BB:CC:DD:EE  <-- your target
 

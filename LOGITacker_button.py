@@ -15,6 +15,9 @@ scriptname = os.path.basename(sys.argv[0])
 print ('LOGITacker injection at the push of two buttons')
 print ('This script executes until Ctrl-C is pressed.')
 print ('Press and hold Ctrl-C in order to stop this program.')
+print (' ')
+if sys.argv[2] == "AA:BB:CC:DD:EE":
+    print ('Test mode executed. No payload will be executed.')
 
 def main():
     # infinite loop for as many executions as needed

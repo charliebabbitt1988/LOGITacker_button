@@ -1,5 +1,5 @@
 #!/bin/ksh
-set -x
+#set -x
 
 # check for /dev/ttyACM0
 check_for_ACM0=$(ls -l /dev/ttyACM0)
