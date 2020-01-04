@@ -9,6 +9,14 @@ usage () {
   exit 1
 }
 
+# check for /dev/ttyACM0
+check_for_ACM0=$(ls -l /dev/ttyACM0)
+if [[ -z $check_for_ACM0 ]]; then
+  echo "Can't execute payload because dongle is not present on /dev/ttyACM0"
+  echo "Plug in the dongle and try again."
+  exit 1
+fi
+
 if [[ -z $1 ]];then
   echo "No argument passed."
   echo "Target device address is needed."
