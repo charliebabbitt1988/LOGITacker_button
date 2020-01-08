@@ -1,6 +1,15 @@
 #!/bin/ksh
 #set -x
 
+usage () {
+  echo ""
+  echo "Usage:"
+  echo "${0} <LOGI_HW_ADDR>"
+  echo "Example: ${0} AA:BB:CC:DD:EE"
+  echo ""
+  exit 1
+}
+
 # check for /dev/ttyACM0
 check_for_ACM0=$(ls -l /dev/ttyACM0)
 if [[ -z $check_for_ACM0 ]]; then
@@ -10,8 +19,9 @@ fi
 
 if [[ -z $1 ]]; then
   echo "No argument passed."
+  echo "Target device address is needed."
   echo "Exiting."
-  exit 1
+  usage
 fi
 
 # clean up LOGITacker screen session just in case

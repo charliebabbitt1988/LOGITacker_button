@@ -5,8 +5,9 @@ This is for using a Yocto Knob to inject a payload to a Logitech dongle.
 Only Linux is supported.
 
 # install needed packages
-- pip3 install yoctopuce
 - apt-get install ksh
+- apt-get install python3
+- pip3 install yoctopuce
 
 With an adapter for Micro USB, plug in the Yocto Knob to your Linux computer.  A battery powered Raspberry Pi or Odroid works well.  Also, flash your dongle with the instructions at: https://github.com/mame82/LOGITacker
 Plug in your dongle of choice.  The April Brother nRF52840 Dongle is recommended.
