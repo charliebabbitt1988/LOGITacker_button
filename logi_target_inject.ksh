@@ -14,7 +14,7 @@ usage () {
 check_for_ACM0=$(ls -l /dev/ttyACM0)
 if [[ -z $check_for_ACM0 ]]; then
   echo "Can't execute payload because dongle is not present on /dev/ttyACM0"
-  exit 1
+  exit 0
 fi
 
 if [[ -z $1 ]]; then
